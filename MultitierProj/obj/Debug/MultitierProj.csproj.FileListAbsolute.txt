@@ -1,0 +1,11 @@
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.csproj.AssemblyReference.cache
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\College1en.Form1.resources
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.Properties.Resources.resources
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.csproj.GenerateResource.cache
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.csproj.CoreCompileInputs.cache
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\bin\Debug\MultitierProj.exe.config
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\bin\Debug\MultitierProj.exe
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\bin\Debug\MultitierProj.pdb
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.exe
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.pdb
+C:\Users\Shaquille\Desktop\MultiTierProject\MultitierProj\obj\Debug\MultitierProj.Form2.resources
