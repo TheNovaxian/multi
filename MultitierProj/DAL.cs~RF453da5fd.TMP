@@ -379,13 +379,13 @@ namespace Data
             from std in ds.Tables["Students"].AsEnumerable()
              where std.Field<string>("StId") == a[0]
               select std.Field<string>("ProgId")
-                ).FirstOrDefault();
+                );
 
             var courseProgramId = (
                 from cid in ds.Tables["Courses"].AsEnumerable()
                 where cid.Field<string>("CId") == a[1]
                 select cid.Field<string>("ProgId")
-            ).FirstOrDefault();
+            );
 
             if (studentProgramId != courseProgramId)
             {

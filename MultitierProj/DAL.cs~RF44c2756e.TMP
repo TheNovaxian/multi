@@ -44,7 +44,6 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-          
             r.UpdateCommand = builder.GetUpdateCommand();
           
 
@@ -349,7 +348,7 @@ namespace Data
                 StName = student.Field<string>("StName"),
                 CId = course.Field<string>("CId"),
                 CName = course.Field<string>("CName"),
-                FinalGrade = enroll.Field<Nullable<int>>("FinalGrade"),
+                FinalGrade = enroll.Field<string>("FinalGrade"),
                 ProgId = prog.Field<string>("ProgId"),
                 ProgName = prog.Field<string>("ProgName")
 
@@ -375,23 +374,6 @@ namespace Data
 
         internal static int AddData(string[] a)
         {
-            var studentProgramId = (
-            from std in ds.Tables["Students"].AsEnumerable()
-             where std.Field<string>("StId") == a[0]
-              select std.Field<string>("ProgId")
-                ).FirstOrDefault();
-
-            var courseProgramId = (
-                from cid in ds.Tables["Courses"].AsEnumerable()
-                where cid.Field<string>("CId") == a[1]
-                select cid.Field<string>("ProgId")
-            ).FirstOrDefault();
-
-            if (studentProgramId != courseProgramId)
-            {
-                College1en.Form1.DALMessage("Error: The student cannot enroll in this course as it is not part of their program.");
-                return -1;
-            }
             var test = (
                    from enroll in ds.Tables["Enrollments"].AsEnumerable()
                    where enroll.Field<string>("StId") == a[0]
@@ -538,7 +520,7 @@ namespace Data
                 var line = ds.Tables["Enrollments"].AsEnumerable()
                                     .Where(s =>
                                       (s.Field<string>("StId") == a[0] && s.Field<string>("CId") == a[1]))
-                                    .Single();
+                                    .SingleOrDefault();
            
 
                 line.SetField("FinalGrade", eval);

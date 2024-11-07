@@ -38,7 +38,7 @@ namespace BusinessLayer
         private static bool IsValidPid(string ProgId)
         {
             bool r = true;
-            if (ProgId.Length != 4) { r = false; }
+            if (ProgId.Length != 5) { r = false; }
             else if (ProgId[0] != 'P') { r = false; }
             else
             {
@@ -86,7 +86,7 @@ namespace BusinessLayer
         private static bool IsValidCId(string CId)
         {
             bool r = true;
-            if (CId.Length != 6) { r = false; }
+            if (CId.Length != 7) { r = false; }
             else if (CId[0] != 'C') { r = false; }
             else
             {
@@ -135,7 +135,7 @@ namespace BusinessLayer
         private static bool IsValidStId(string StId)
         {
             bool r = true;
-            if (StId.Length != 9) { r = false; }
+            if (StId.Length != 10) { r = false; }
             else if (StId[0] != 'S') { r = false; }
             else
             {

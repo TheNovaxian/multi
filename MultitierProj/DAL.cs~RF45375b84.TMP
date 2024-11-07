@@ -376,10 +376,10 @@ namespace Data
         internal static int AddData(string[] a)
         {
             var studentProgramId = (
-            from std in ds.Tables["Students"].AsEnumerable()
-             where std.Field<string>("StId") == a[0]
-              select std.Field<string>("ProgId")
-                ).FirstOrDefault();
+    from std in ds.Tables["Students"].AsEnumerable()
+    where std.Field<string>("StId") == a[0]
+    select std.Field<string>("ProgId")
+).FirstOrDefault();
 
             var courseProgramId = (
                 from cid in ds.Tables["Courses"].AsEnumerable()

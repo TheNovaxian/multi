@@ -44,7 +44,6 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-          
             r.UpdateCommand = builder.GetUpdateCommand();
           
 
@@ -59,7 +58,7 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-            //builder.ConflictOption = ConflictOption.OverwriteChanges;
+            builder.ConflictOption = ConflictOption.OverwriteChanges;
             r.UpdateCommand = builder.GetUpdateCommand();
 
             return r;
@@ -69,12 +68,12 @@ namespace Data
         private static SqlDataAdapter InitAdapterEnrollments()
         {
            SqlDataAdapter r = new SqlDataAdapter(
-                "SELECT * FROM Enrollments ORDER BY StId, CId",
+                "SELECT * FROM Enrollments ORDER BY CId",
                 Connect.ConnectionString
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-            //builder.ConflictOption = ConflictOption.OverwriteChanges;
+            builder.ConflictOption = ConflictOption.OverwriteChanges;
             r.UpdateCommand = builder.GetUpdateCommand();
 
             return r;
@@ -89,7 +88,7 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-            //builder.ConflictOption = ConflictOption.OverwriteChanges;
+            builder.ConflictOption = ConflictOption.OverwriteChanges;
             r.UpdateCommand = builder.GetUpdateCommand();
 
             return r;
@@ -110,25 +109,15 @@ namespace Data
 
         private static void loadPrograms(DataSet ds)
         {
-            //adapterPrograms.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapterPrograms.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapterPrograms.Fill(ds, "Programs");
-
-            ds.Tables["Programs"].Columns["ProgId"].AllowDBNull = false;
-            ds.Tables["Programs"].Columns["ProgName"].AllowDBNull = false;
-
-            ds.Tables["Programs"].PrimaryKey = new DataColumn[1] { ds.Tables["Programs"].Columns["ProgId"] };
 
         }
         private static void loadCourses(DataSet ds)
         {
-            //adapterCourses.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapterCourses.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapterCourses.Fill(ds, "Courses");
 
-
-            ds.Tables["Courses"].Columns["CId"].AllowDBNull = false;
-            ds.Tables["Courses"].Columns["CName"].AllowDBNull = false;
-
-            ds.Tables["Courses"].PrimaryKey = new DataColumn[1] { ds.Tables["Courses"].Columns["CId"] };
           
                 ForeignKeyConstraint fkc = new ForeignKeyConstraint(
                     "FK_Courses_Programs",
@@ -144,13 +133,8 @@ namespace Data
 
         private static void loadStudents(DataSet ds)
         {
-            //adapterStudents.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapterStudents.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapterStudents.Fill(ds, "Students");
-
-            ds.Tables["Students"].Columns["StId"].AllowDBNull = false;
-            ds.Tables["Students"].Columns["StName"].AllowDBNull = false;
-
-            ds.Tables["Students"].PrimaryKey = new DataColumn[1] { ds.Tables["Students"].Columns["StId"] };
 
            
           
@@ -170,13 +154,8 @@ namespace Data
 
         private static void loadEnrollments(DataSet ds)
         {
-            //adapterEnrollments.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapterEnrollments.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapterEnrollments.Fill(ds, "Enrollments");
-
-            ds.Tables["Enrollments"].Columns["StId"].AllowDBNull = false;
-            ds.Tables["Enrollments"].Columns["CId"].AllowDBNull = false;
-
-            ds.Tables["Enrollments"].PrimaryKey = new DataColumn[2] { ds.Tables["Enrollments"].Columns["StId"], ds.Tables["Enrollments"].Columns["CId"] };
 
          
                 ForeignKeyConstraint fkc = new ForeignKeyConstraint(
@@ -349,7 +328,7 @@ namespace Data
                 StName = student.Field<string>("StName"),
                 CId = course.Field<string>("CId"),
                 CName = course.Field<string>("CName"),
-                FinalGrade = enroll.Field<Nullable<int>>("FinalGrade"),
+                FinalGrade = enroll.Field<string>("FinalGrade"),
                 ProgId = prog.Field<string>("ProgId"),
                 ProgName = prog.Field<string>("ProgName")
 
@@ -375,23 +354,6 @@ namespace Data
 
         internal static int AddData(string[] a)
         {
-            var studentProgramId = (
-            from std in ds.Tables["Students"].AsEnumerable()
-             where std.Field<string>("StId") == a[0]
-              select std.Field<string>("ProgId")
-                ).FirstOrDefault();
-
-            var courseProgramId = (
-                from cid in ds.Tables["Courses"].AsEnumerable()
-                where cid.Field<string>("CId") == a[1]
-                select cid.Field<string>("ProgId")
-            ).FirstOrDefault();
-
-            if (studentProgramId != courseProgramId)
-            {
-                College1en.Form1.DALMessage("Error: The student cannot enroll in this course as it is not part of their program.");
-                return -1;
-            }
             var test = (
                    from enroll in ds.Tables["Enrollments"].AsEnumerable()
                    where enroll.Field<string>("StId") == a[0]
@@ -416,23 +378,19 @@ namespace Data
                     var query = (
                            from std in ds.Tables["Students"].AsEnumerable()
                            from cid in ds.Tables["Courses"].AsEnumerable()
-                           from pid in ds.Tables["Programs"].AsEnumerable()
                            where std.Field<string>("StId") == a[0]
                            where cid.Field<string>("CId") == a[1]
-                           where pid.Field<string>("ProgId") == cid.Field<string>("ProgId")
                            select new
                            {
                                StId = std.Field<string>("StId"),
                                StName = std.Field<string>("StName"),
                                CId = cid.Field<string>("CId"),
                                CName = cid.Field<string>("CName"),
-                               ProgId = pid.Field<string>("ProgId"),
-                               ProgName = pid.Field<string>("ProgName"),
                                Fgrade = line.Field<Nullable<int>>("FinalGrade")
                            });
                 
                     var r = query.Single();
-                    displayEnrollments.Rows.Add(new object[] { r.StId, r.StName, r.CId, r.CName, r.Fgrade, r.ProgId, r.ProgName });
+                    displayEnrollments.Rows.Add(new object[] { r.StId, r.StName, r.CId, r.CName, r.Fgrade });
                     College1en.Form1.DALMessage("Insertion successful");
                 }
                 return 0;
@@ -538,7 +496,7 @@ namespace Data
                 var line = ds.Tables["Enrollments"].AsEnumerable()
                                     .Where(s =>
                                       (s.Field<string>("StId") == a[0] && s.Field<string>("CId") == a[1]))
-                                    .Single();
+                                    .SingleOrDefault();
            
 
                 line.SetField("FinalGrade", eval);

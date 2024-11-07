@@ -89,7 +89,50 @@ namespace MultitierProj
             ShowDialog();
         }
 
-      
+        //private void Form2_Load(object sender, EventArgs e)
+        //{
+        //    SqlConnectionStringBuilder cs = new SqlConnectionStringBuilder
+        //    {
+        //        DataSource = "(local)",
+        //        InitialCatalog = "College1en",
+        //        UserID = "sa",
+        //        Password = "sysadm"
+        //    };
+
+        //    string query = @"
+        //SELECT 
+        //    E.StId, 
+        //    S.StName, 
+        //    E.CId, 
+        //    C.CName 
+        //FROM 
+        //    Enrollments E
+        //JOIN 
+        //    Students S ON E.StId = S.StId
+        //JOIN 
+        //    Courses C ON E.CId = C.CId";
+
+        //    adapter = new SqlDataAdapter(query, cs.ConnectionString);
+        //    adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+
+        //    ds = new DataSet();
+        //    adapter.Fill(ds, "Enrollments");
+
+        //    // Populate comboBox1 for Students
+        //    comboBox1.DisplayMember = "StId"; // Display the student name
+        //    comboBox1.ValueMember = "StId"; // Value is the student ID
+        //    comboBox1.DataSource = ds.Tables["Enrollments"].DefaultView.ToTable(true, "StId", "StName"); // Distinct students
+        //    comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        //    // Populate comboBox2 for Courses
+        //    comboBox2.DisplayMember = "CId"; // Display the course name
+        //    comboBox2.ValueMember = "CId"; // Value is the course ID
+        //    comboBox2.DataSource = ds.Tables["Enrollments"].DefaultView.ToTable(true, "CId", "CName"); // Distinct courses
+        //    comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        //    textBox1.ReadOnly = true;
+        //    textBox2.ReadOnly = true;
+        //}
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
