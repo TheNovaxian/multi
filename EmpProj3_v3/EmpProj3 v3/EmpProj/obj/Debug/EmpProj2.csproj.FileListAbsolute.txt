@@ -1,0 +1,33 @@
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\bin\Debug\EmpProj.exe.config
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\bin\Debug\EmpProj.exe
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\bin\Debug\EmpProj.pdb
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.csprojAssemblyReference.cache
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.Form1.resources
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.Form2.resources
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.csproj.GenerateResource.cache
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.csproj.CoreCompileInputs.cache
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj.exe
+F:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj.pdb
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\bin\Debug\EmpProj.exe.config
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\bin\Debug\EmpProj.exe
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\bin\Debug\EmpProj.pdb
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.csprojAssemblyReference.cache
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.Form1.resources
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.Form2.resources
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.csproj.GenerateResource.cache
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj2.csproj.CoreCompileInputs.cache
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj.exe
+E:\C# ADO.NET LS-W2023\Exemples Special\EmpProj2\EmpProj\obj\Debug\EmpProj.pdb
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\bin\Debug\EmpProj.exe.config
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\bin\Debug\EmpProj.exe
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\bin\Debug\EmpProj.pdb
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj2.csprojAssemblyReference.cache
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj2.Form1.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj2.Form2.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj2.csproj.GenerateResource.cache
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj2.csproj.CoreCompileInputs.cache
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj.exe
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj2 v2\EmpProj\obj\Debug\EmpProj.pdb

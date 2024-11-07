@@ -12,22 +12,68 @@ namespace BusinessLayer
     {
         internal static int UpdatePrograms()
         {
-             return Data.Programs.UpdatePrograms();
+            DataSet ds = Data.DataTables.getDataSet();
+
+            DataTable dt = ds.Tables["Programs"].GetChanges(DataRowState.Added | DataRowState.Modified);
+
+            if( dt != null)
+            {
+                if(dt.AsEnumerable().Any(r => !IsValidPid(r.Field<string> ("ProgId"))))
+                {
+                    College1en.Form1.BLLMessage("Invalid Program Id");
+                    ds.RejectChanges();
+                    return -1;
+                }
+                else
+                {
+                    return Data.Programs.UpdatePrograms();
+                }
+            }
+            else
+            {
+                return Data.Programs.UpdatePrograms();
+            }
         }
-        
+
+        private static bool IsValidPid(string ProgId)
+        {
+            bool r = true;
+            if (ProgId.Length != 4) { r = false; }
+            else if (ProgId[0] != 'P') { r = false; }
+            else
+            {
+                for (int i = 1; i < ProgId.Length; i++)
+                {
+                    r = r && Char.IsDigit(ProgId[i]);
+                }
+            }
+            return r;
+        }
+
     }
 
     internal class Courses
     {
         internal static int UpdateCourses()
         {
-            DataTable dt = Data.Courses.GetCourses()
-                              .GetChanges(DataRowState.Added | DataRowState.Modified);
-            if ((dt != null) && (dt.Select("Prix < 10.0").Length > 0))
+            DataSet ds = Data.DataTables.getDataSet();
+
+            DataTable dt = ds.Tables["Courses"].GetChanges(DataRowState.Added | DataRowState.Modified);
+
+            if (dt != null)
             {
-                College1en.Form1.msgCommandTooLow();
-                Data.Courses.GetCourses().RejectChanges();
-                return -1;
+                if (dt.AsEnumerable().Any(r => !IsValidCId(r.Field<string>("CId"))))
+                //(!IsValidProjId(dt.Rows[0].Field<string>("ProjId")))
+                {
+                    College1en.Form1.BLLMessage("Invalid Id for Projects");
+       
+                    ds.RejectChanges();
+                    return -1;
+                }
+                else
+                {
+                    return Data.Courses.UpdateCourses();
+                }
             }
             else
             {
@@ -35,50 +81,106 @@ namespace BusinessLayer
             }
         }
 
-    }   
 
-    internal class Enrollments
-    {
-        internal static int UpdateEnrollments()
+
+        private static bool IsValidCId(string CId)
         {
-
-            DataTable dt = Data.Enrollments.GetEnrollments()
-                              .GetChanges(DataRowState.Added | DataRowState.Modified);
-            if ((dt != null) && (dt.Select("Prix < 10.0").Length > 0))
-            {
-                College1en.Form1.msgCommandTooLow();
-                Data.Enrollments.GetEnrollments().RejectChanges();
-                return -1;
-            }
+            bool r = true;
+            if (CId.Length != 6) { r = false; }
+            else if (CId[0] != 'C') { r = false; }
             else
             {
-                return Data.Enrollments.UpdateEnrollments();
+                for (int i = 1; i < CId.Length; i++)
+                {
+                    r = r && Char.IsDigit(CId[i]);
+                }
             }
-           
+            return r;
         }
 
     }
+
 
     internal class Students
     {
         internal static int UpdateStudents()
         {
-            DataTable dt = Data.Students.GetStudents()
-                             .GetChanges(DataRowState.Added | DataRowState.Modified);
-            if ((dt != null) && (dt.Select("Prix < 10.0").Length > 0))
+            DataSet ds = Data.DataTables.getDataSet();
+
+            DataTable dt = ds.Tables["Students"].GetChanges(DataRowState.Added | DataRowState.Modified);
+
+            if (dt != null)
             {
-                College1en.Form1.msgCommandTooLow();
-                Data.Students.GetStudents().RejectChanges();
-                return -1;
+                if (dt.AsEnumerable().Any(r => !IsValidStId(r.Field<string>("StId"))))
+
+                {
+                    College1en.Form1.BLLMessage("Invalid Id for Projects");
+
+                    ds.RejectChanges();
+                    return -1;
+                }
+                else
+                {
+                    return Data.Students.UpdateStudents();
+                }
             }
             else
             {
                 return Data.Students.UpdateStudents();
             }
+        }
 
 
-          
+
+        private static bool IsValidStId(string StId)
+        {
+            bool r = true;
+            if (StId.Length != 9) { r = false; }
+            else if (StId[0] != 'S') { r = false; }
+            else
+            {
+                for (int i = 1; i < StId.Length; i++)
+                {
+                    r = r && Char.IsDigit(StId[i]);
+                }
+            }
+            return r;
         }
 
     }
+
+    internal class Enrollments
+    {
+        internal static int UpdateFinalGrade(string[] a, string ev)
+        {
+            Nullable<int> eval;
+            int temp;
+
+            if (ev == "")
+            {
+                eval = null;
+            }
+            else if (int.TryParse(ev, out temp) && (0 <= temp && temp <= 100))
+            {
+                eval = temp;
+            }
+            else
+            {
+                College1en.Form1.BLLMessage(
+                          "Final Grade must be an integer between 0 and 100"
+                          );
+                return -1;
+            }
+
+            return Data.Enrollments.UpdateFinal(a, eval);
+
+            //DataTable dt = Data.Enrollments.GetEnrollments()
+            //                  .GetChanges(DataRowState.Added | DataRowState.Modified);
+
+
+        }
+
+    }
+
+    
 }

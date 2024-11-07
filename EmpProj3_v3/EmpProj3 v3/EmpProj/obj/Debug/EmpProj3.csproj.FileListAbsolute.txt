@@ -1,0 +1,44 @@
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj3.csprojAssemblyReference.cache
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj3.csproj.GenerateResource.cache
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj3.csproj.CoreCompileInputs.cache
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj.exe
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj.pdb
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\bin\Debug\EmpProj.exe.config
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\bin\Debug\EmpProj.exe
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\bin\Debug\EmpProj.pdb
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj3.Form1.resources
+F:\C# ADO.NET IG-2023\Exemples Special\EmpProj3\EmpProj\obj\Debug\EmpProj3.Form2.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.exe.config
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.exe
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.pdb
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csprojAssemblyReference.cache
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.Form1.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.Form2.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.GenerateResource.cache
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.CoreCompileInputs.cache
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.exe
+F:\C# ADO.NET LS-S2023\Exemples Special\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.pdb
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.exe.config
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.exe
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.pdb
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csprojAssemblyReference.cache
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.Form1.resources
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.Form2.resources
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.GenerateResource.cache
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.CoreCompileInputs.cache
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.exe
+F:\C# ADO.NET LS-F2023\ExamplesForProject\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.pdb
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.exe.config
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.exe
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\bin\Debug\EmpProj.pdb
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.AssemblyReference.cache
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.Form1.resources
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.Form2.resources
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.Properties.Resources.resources
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.GenerateResource.cache
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj3.csproj.CoreCompileInputs.cache
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.exe
+C:\Users\Shaquille\Desktop\MultiTierProject\EmpProj3_v3\EmpProj3 v3\EmpProj\obj\Debug\EmpProj.pdb

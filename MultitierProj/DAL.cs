@@ -113,6 +113,23 @@ namespace Data
             adapterPrograms.Fill(ds, "Programs");
 
         }
+        private static void loadCourses(DataSet ds)
+        {
+            adapterCourses.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapterCourses.Fill(ds, "Courses");
+
+          
+                ForeignKeyConstraint fkc = new ForeignKeyConstraint(
+                    "FK_Courses_Programs",
+                    ds.Tables["Programs"].Columns["ProgId"],
+                    ds.Tables["Courses"].Columns["ProgId"]
+                );
+
+                ds.Tables["Courses"].Constraints.Add(fkc);
+                fkc.DeleteRule = Rule.Cascade;
+                fkc.UpdateRule = Rule.Cascade;
+            
+        }
 
         private static void loadStudents(DataSet ds)
         {
@@ -134,23 +151,6 @@ namespace Data
             
         }
 
-        private static void loadCourses(DataSet ds)
-        {
-            adapterCourses.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapterCourses.Fill(ds, "Courses");
-
-          
-                ForeignKeyConstraint fkc = new ForeignKeyConstraint(
-                    "FK_Courses_Programs",
-                    ds.Tables["Programs"].Columns["ProgId"],
-                    ds.Tables["Courses"].Columns["ProgId"]
-                );
-
-                ds.Tables["Courses"].Constraints.Add(fkc);
-                fkc.DeleteRule = Rule.Cascade;
-                fkc.UpdateRule = Rule.Cascade;
-            
-        }
 
         private static void loadEnrollments(DataSet ds)
         {
@@ -180,11 +180,6 @@ namespace Data
                 fkc2.UpdateRule = Rule.Cascade;
           
         }
-
-
-
-
-
 
 
 
@@ -245,6 +240,31 @@ namespace Data
 
 
     }
+    internal class Students
+    {
+        private static SqlDataAdapter adapter = DataTables.getAdapterStudents();
+        private static DataSet ds = DataTables.getDataSet();
+
+
+        internal static DataTable GetStudents()
+        {
+            return ds.Tables["Students"];
+        }
+
+
+        internal static int UpdateStudents()
+        {
+            if (!ds.Tables["Students"].HasErrors)
+            {
+                return adapter.Update(ds.Tables["Students"]);
+            }
+            else
+            {
+                return -1;
+            }
+        }
+    }
+
 
 
     internal class Courses
@@ -283,52 +303,219 @@ namespace Data
         private static SqlDataAdapter adapter = DataTables.getAdapterEnrollments();
         private static DataSet ds = DataTables.getDataSet();
 
+        private static DataTable displayEnrollments = null;
 
         internal static DataTable GetEnrollments()
         {
-            return ds.Tables["Enrollments"];
+
+            ds.Tables["Enrollments"].AcceptChanges();
+
+            var query = (
+            from enroll in ds.Tables["Enrollments"].AsEnumerable()
+            from prog in ds.Tables["Programs"].AsEnumerable()
+            from course in ds.Tables["Courses"].AsEnumerable()
+            from student in ds.Tables["Students"].AsEnumerable()
+            where prog.Field<string>("ProgId") == course.Field<string>("ProgId")
+            where enroll.Field<string>("CId") == course.Field<string>("CId")
+            where enroll.Field<string>("StId") == student.Field<string>("StId")
+         
+            
+
+          
+            select new
+            {
+                StId = student.Field<string>("StId"),
+                CId = course.Field<string>("CId"),
+                FinalGrade = enroll.Field<string>("FinalGrade")
+
+            });
+
+            DataTable result = new DataTable();
+            result.Columns.Add("StId");
+            result.Columns.Add("CId");
+            result.Columns.Add("FinalGrade");
+            foreach (var item in query)
+            {
+                object[] allFields = { item.StId, item.CId, item.FinalGrade };
+                result.Rows.Add(allFields);
+            }
+            displayEnrollments = result;
+            return displayEnrollments;
         }
 
 
-        internal static int UpdateEnrollments()
+        internal static int AddData(string[] a)
         {
-            if (!ds.Tables["Enrollments"].HasErrors)
+            var test = (
+                   from enroll in ds.Tables["Enrollments"].AsEnumerable()
+                   where enroll.Field<string>("StId") == a[0]
+                   where enroll.Field<string>("CId") == a[1]
+                   select enroll);
+            if (test.Count() > 0)
             {
-                return adapter.Update(ds.Tables["Enrollments"]);
+                College1en.Form1.DALMessage("This assignment already exists");
+                return -1;
             }
-            else
+            try
             {
+                DataRow line = ds.Tables["Enrollments"].NewRow();
+                line.SetField("StId", a[0]);
+                line.SetField("CId", a[1]);
+                ds.Tables["Enrollments"].Rows.Add(line);
+
+                adapter.Update(ds.Tables["Enrollments"]);
+
+                if (displayEnrollments != null)
+                {
+                    var query = (
+                           from std in ds.Tables["Students"].AsEnumerable()
+                           from cid in ds.Tables["Courses"].AsEnumerable()
+                           where std.Field<string>("StId") == a[0]
+                           where cid.Field<string>("CId") == a[1]
+                           select new
+                           {
+                               StId = std.Field<string>("StId"),
+                               StName = std.Field<string>("StName"),
+                               CId = cid.Field<string>("CId"),
+                               CName = cid.Field<string>("CName"),
+                               Fgrade = line.Field<Nullable<int>>("FinalGrade")
+                           });
+                
+                    var r = query.Single();
+                    displayEnrollments.Rows.Add(new object[] { r.StId, r.StName, r.CId, r.CName, r.Fgrade });
+                    College1en.Form1.DALMessage("Insertion successful");
+                }
+                return 0;
+            }
+            catch (Exception)
+            {
+                College1en.Form1.DALMessage("Insertion / Update rejected");
                 return -1;
             }
         }
-    }
 
-
-
-    internal class Students
-    {
-        private static SqlDataAdapter adapter = DataTables.getAdapterStudents();
-        private static DataSet ds = DataTables.getDataSet();
-
-
-        internal static DataTable GetStudents()
+        internal static int ModData(string[] a)
         {
-            return ds.Tables["Students"];
-        }
-
-
-        internal static int UpdateStudents()
-        {
-            if (!ds.Tables["Students"].HasErrors)
+            var test = (
+                   from enroll in ds.Tables["Enrollments"].AsEnumerable()
+                   where enroll.Field<string>("StId") == a[0]
+                   where enroll.Field<string>("CId") == a[1]
+                   select enroll);
+            if (test.Count() > 0)
             {
-                return adapter.Update(ds.Tables["Students"]);
+                College1en.Form1.DALMessage("This assignment already exists");
+                return -1;
             }
-            else
+            try
             {
+                DataRow line = ds.Tables["Enrollments"].NewRow();
+                line.SetField("StId", a[0]);
+                line.SetField("CId", a[1]);
+                ds.Tables["Enrollments"].Rows.Add(line);
+
+                adapter.Update(ds.Tables["Enrollments"]);
+
+                if (displayEnrollments != null)
+                {
+                    var query = (
+                           from std in ds.Tables["Students"].AsEnumerable()
+                           from cid in ds.Tables["Courses"].AsEnumerable()
+                           where std.Field<string>("StId") == a[0]
+                           where cid.Field<string>("CId") == a[1]
+                           select new
+                           {
+                               StId = std.Field<string>("StId"),
+                               StName = std.Field<string>("StName"),
+                               CId = cid.Field<string>("CId"),
+                               CName = cid.Field<string>("CName"),
+                               Fgrade = line.Field<Nullable<int>>("FinalGrade")
+                           });
+
+                    var r = query.Single();
+                    displayEnrollments.Rows.Add(new object[] { r.StId, r.StName, r.CId, r.CName, r.Fgrade });
+                    College1en.Form1.DALMessage("Modication successful");
+                }
+                return 0;
+            }
+            catch (Exception)
+            {
+                College1en.Form1.DALMessage("Insertion / Update rejected");
                 return -1;
             }
         }
+
+
+        internal static int DeleteData(List<string[]> lId)
+        {
+            try
+            {
+                var lines = ds.Tables["Enrollments"].AsEnumerable()
+                                .Where(s =>
+                                   lId.Any(x => (x[0] == s.Field<string>("StId") && x[1] == s.Field<string>("CId"))));
+
+                foreach (var line in lines)
+                {
+                    line.Delete();
+                }
+
+                adapter.Update(ds.Tables["Enrollments"]);
+
+                if (displayEnrollments != null)
+                {
+                    foreach (var p in lId)
+                    {
+                        var r = displayEnrollments.AsEnumerable()
+                                .Where(s => (s.Field<string>("StId") == p[0] && s.Field<string>("CId") == p[1]))
+                                .Single();
+                        displayEnrollments.Rows.Remove(r);
+                    }
+                }
+                return 0;
+            }
+            catch (Exception)
+            {
+                College1en.Form1.DALMessage("Update / Deletion rejected");
+                return -1;
+            }
+        }
+
+
+        internal static int UpdateFinal(string[] a, Nullable<int> eval)
+        {
+            try
+            {
+                var line = ds.Tables["Enrollments"].AsEnumerable()
+                                    .Where(s =>
+                                      (s.Field<string>("StId") == a[0] && s.Field<string>("CId") == a[1]))
+                                    .SingleOrDefault();
+           
+
+                line.SetField("FinalGrade", eval);
+
+                adapter.Update(ds.Tables["Enrollments"]);
+
+                if (displayEnrollments != null)
+                {
+                    var r = displayEnrollments.AsEnumerable()
+                                    .Where(s =>
+                                      (s.Field<string>("StId") == a[0] && s.Field<string>("CId") == a[1]))
+                                    .SingleOrDefault();
+                    r.SetField("FinalGrade", eval);
+                }
+                return 0;
+            }
+            catch (Exception)
+            {
+                College1en.Form1.DALMessage("Update / Deletion rejected");
+                return -1;
+            }
+        }
+
+
+        
     }
+
+
 
 
 
