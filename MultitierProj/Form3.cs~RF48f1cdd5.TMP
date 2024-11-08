@@ -51,50 +51,62 @@ namespace MultitierProj
             mode = m;
             Text = "" + mode;
 
-            var selectedRow = c[0];
-            textBox1.Text = selectedRow.Cells["StId"].Value.ToString();
-            textBox4.Text = selectedRow.Cells["StName"].Value.ToString();
-            textBox3.Text = selectedRow.Cells["CId"].Value.ToString();
-            textBox2.Text = selectedRow.Cells["CName"].Value.ToString();
-            textBox5.Text = selectedRow.Cells["FinalGrade"].Value.ToString();
-
-
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
             textBox3.ReadOnly = true;
             textBox4.ReadOnly = true;
             textBox5.ReadOnly = false;
 
-            //if (mode == Modes.FINAL)
-            //{
+            if (mode == Modes.FINAL)
+            {
                
-            //    if (c.Count > 0)
-            //    {
-            //        //var selectedRow = c[0];
-            //        string studentId = selectedRow.Cells["StId"].Value.ToString(); 
+                if (c.Count > 0)
+                {
+                    var selectedRow = c[0];
+                    string studentId = selectedRow.Cells["StId"].Value.ToString(); 
                     
-            //        //LoadEnrollmentData(studentId);
-            //    }
-            //}
+                    LoadEnrollmentData(studentId);
+                }
+            }
 
             ShowDialog();
         }
 
-      
+        private void LoadEnrollmentData(string studentId)
+        {
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectionString))
+            {
+               
+                string query = @"
+            SELECT e.StId, s.StName, e.CId, c.Cname, e.FinalGrade
+            FROM Enrollments e
+            INNER JOIN Students s ON e.StId = s.StId
+            INNER JOIN Courses c ON e.CId = c.CId
+            WHERE e.StId = @StId";
+
+                SqlDataAdapter r = new SqlDataAdapter(query, connection);
+                r.SelectCommand.Parameters.AddWithValue("@StId", studentId);
+
+                DataTable enrollmentData = new DataTable();
+                r.Fill(enrollmentData);
+
+                if (enrollmentData.Rows.Count > 0)
+                {
+                    DataRow row = enrollmentData.Rows[0];
+                    textBox1.Text = row["StId"].ToString(); 
+                    textBox4.Text = row["StName"].ToString();  
+                    textBox3.Text = row["CId"].ToString();  
+                    textBox2.Text = row["Cname"].ToString();  
+                    textBox5.Text = row["FinalGrade"].ToString(); 
+                }
+            }
+        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (mode == Modes.FINAL)
             {
-                int? finalGrade = null;
-
-
-
-                if (textBox5.Text != "")
-                {
-                    finalGrade = int.Parse(textBox5.Text);
-                }
-                assignInitial = new string[] { textBox1.Text, textBox3.Text };
+                int finalGrade = int.Parse(textBox5.Text);
                 Data.Enrollments.UpdateFinal(assignInitial, finalGrade);
             }
         }

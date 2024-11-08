@@ -53,10 +53,8 @@ namespace MultitierProj
 
             var selectedRow = c[0];
             textBox1.Text = selectedRow.Cells["StId"].Value.ToString();
-            textBox4.Text = selectedRow.Cells["StName"].Value.ToString();
-            textBox3.Text = selectedRow.Cells["CId"].Value.ToString();
-            textBox2.Text = selectedRow.Cells["CName"].Value.ToString();
-            textBox5.Text = selectedRow.Cells["FinalGrade"].Value.ToString();
+            textBox4.Text = selectedRow.Cells["CId"].Value.ToString();
+            textBox3.Text = selectedRow.Cells["FinalGrade"].Value.ToString();
 
 
             textBox1.ReadOnly = true;
@@ -65,17 +63,17 @@ namespace MultitierProj
             textBox4.ReadOnly = true;
             textBox5.ReadOnly = false;
 
-            //if (mode == Modes.FINAL)
-            //{
+            if (mode == Modes.FINAL)
+            {
                
-            //    if (c.Count > 0)
-            //    {
-            //        //var selectedRow = c[0];
-            //        string studentId = selectedRow.Cells["StId"].Value.ToString(); 
+                if (c.Count > 0)
+                {
+                    //var selectedRow = c[0];
+                    string studentId = selectedRow.Cells["StId"].Value.ToString(); 
                     
-            //        //LoadEnrollmentData(studentId);
-            //    }
-            //}
+                    //LoadEnrollmentData(studentId);
+                }
+            }
 
             ShowDialog();
         }
