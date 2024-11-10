@@ -303,7 +303,6 @@ namespace Data
 
         internal static int UpdateCourses()
         {
-
             if (!ds.Tables["Courses"].HasErrors)
             {
                 return adapter.Update(ds.Tables["Courses"]);
@@ -506,7 +505,7 @@ namespace Data
                                 .Where(s =>
                                    lId.Any(x => (x[0] == s.Field<string>("StId") && x[1] == s.Field<string>("CId"))));
 
-                
+                // an enrollment cannot be deleted if final grade is not null
                 foreach (var line in lines)
                 {
                     if (line.Field<Nullable<int>>("FinalGrade") != null)

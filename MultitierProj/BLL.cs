@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -163,6 +164,13 @@ namespace BusinessLayer
             else if (int.TryParse(ev, out temp) && (0 <= temp && temp <= 100))
             {
                 eval = temp;
+               
+            }
+            else if (ev.Any(c => !Char.IsDigit(c))) 
+            {
+                
+                College1en.Form1.BLLMessage("Final Grade must be a valid integer between 0 and 100  or null.");
+                return -1;
             }
             else
             {
@@ -173,6 +181,8 @@ namespace BusinessLayer
             }
 
             return Data.Enrollments.UpdateFinal(a, eval);
+
+           
 
             //DataTable dt = Data.Enrollments.GetEnrollments()
             //                  .GetChanges(DataRowState.Added | DataRowState.Modified);

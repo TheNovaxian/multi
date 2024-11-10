@@ -7,28 +7,24 @@
       "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|c:\\users\\shaquille\\desktop\\multitierproject\\multitierproj\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|c:\\users\\shaquille\\desktop\\multitierproject\\multitierproj\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|c:\\users\\shaquille\\desktop\\multitierproject\\multitierproj\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|c:\\users\\shaquille\\desktop\\multitierproject\\multitierproj\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|c:\\users\\shaquille\\desktop\\multitierproject\\multitierproj\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03BBBE5C-7938-4F72-8584-F71AAA127CF0}|MultitierProj.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,20 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "BLL.cs",
               "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\BLL.cs",
               "RelativeDocumentMoniker": "BLL.cs",
               "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\BLL.cs",
               "RelativeToolTip": "BLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAIAwwD0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T22:47:17.595Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -71,27 +68,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form3.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form3.cs",
-              "RelativeDocumentMoniker": "Form3.cs",
-              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form3.cs [Design]",
-              "RelativeToolTip": "Form3.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T21:14:53.75Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
               "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAH4AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T23:35:34.268Z"
+              "WhenOpened": "2024-11-10T19:25:21.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAkwDwAAACFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T19:17:49.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T19:17:47.481Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAApwNMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T19:01:22.998Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,46 +125,10 @@
               "RelativeDocumentMoniker": "DAL.cs",
               "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\DAL.cs",
               "RelativeToolTip": "DAL.cs",
-              "ViewState": "AgIAAEgBAAAAAAAAAAAAABQCAABHAAAAAAAAAA==",
+              "ViewState": "AgIAACgBAAAAAAAAAAAAADEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T22:58:03.128Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form3.cs",
-              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form3.cs",
-              "RelativeDocumentMoniker": "Form3.cs",
-              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form3.cs",
-              "RelativeToolTip": "Form3.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAuwE0AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T21:18:22.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAANAAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T22:53:21.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\MultitierProj\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T00:58:36.346Z"
             }
           ]
         }
