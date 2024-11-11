@@ -161,7 +161,7 @@ namespace Data
                
             );
             ds.Tables["Students"].Constraints.Add(fkc);
-            fkc.DeleteRule = Rule.Cascade;
+            fkc.DeleteRule = Rule.None;
             fkc.UpdateRule = Rule.Cascade;
 
 
@@ -187,8 +187,8 @@ namespace Data
                 );
 
                 ds.Tables["Enrollments"].Constraints.Add(fkc);
-                fkc.DeleteRule = Rule.Cascade;
-                fkc.UpdateRule = Rule.Cascade;
+                fkc.DeleteRule = Rule.None;
+                fkc.UpdateRule = Rule.None;
            
           
                 ForeignKeyConstraint fkc2 = new ForeignKeyConstraint(
@@ -198,7 +198,7 @@ namespace Data
                 );
 
                 ds.Tables["Enrollments"].Constraints.Add(fkc2);
-            //fkc2.DeleteRule = Rule.Cascade;
+            fkc2.DeleteRule = Rule.Cascade;
             fkc2.UpdateRule = Rule.Cascade;
           
         }
