@@ -92,11 +92,20 @@ namespace MultitierProj
 
                 if (textBox5.Text != "")
                 {
-                    finalGrade = int.Parse(textBox5.Text);
+                    if(int.TryParse(textBox5.Text, out int temp)){
+                        finalGrade = temp;
+                    }
+                    else
+                    {
+                        College1en.Form1.BLLMessage("Final Grade must be an integer between 0 and 100 or null.");
+                        return;
+                    }
+                    
                 }
                 assignInitial = new string[] { textBox1.Text, textBox3.Text };
                 Data.Enrollments.UpdateFinal(assignInitial, finalGrade);
             }
+            Close();
         }
 
 

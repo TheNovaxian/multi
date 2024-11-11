@@ -198,8 +198,8 @@ namespace Data
                 );
 
                 ds.Tables["Enrollments"].Constraints.Add(fkc2);
-                fkc2.DeleteRule = Rule.Cascade;
-                fkc2.UpdateRule = Rule.Cascade;
+            //fkc2.DeleteRule = Rule.Cascade;
+            fkc2.UpdateRule = Rule.Cascade;
           
         }
 
@@ -287,8 +287,6 @@ namespace Data
         }
     }
 
-
-
     internal class Courses
     {
         private static SqlDataAdapter adapter = DataTables.getAdapterCourses();
@@ -320,7 +318,6 @@ namespace Data
 
 
     }
-
 
     internal class Enrollments
     {
@@ -449,6 +446,24 @@ namespace Data
 
         internal static int ModData(string[] a)
         {
+            var studentProgramId = (
+           from std in ds.Tables["Students"].AsEnumerable()
+           where std.Field<string>("StId") == a[0]
+           select std.Field<string>("ProgId")
+               ).FirstOrDefault();
+
+            var courseProgramId = (
+                from cid in ds.Tables["Courses"].AsEnumerable()
+                where cid.Field<string>("CId") == a[1]
+                select cid.Field<string>("ProgId")
+            ).FirstOrDefault();
+
+            if (studentProgramId != courseProgramId)
+            {
+                College1en.Form1.BLLMessage("Error: The student cannot enroll in this course as it is not part of their program.");
+                return -1;
+            }
+
             var test = (
                    from enroll in ds.Tables["Enrollments"].AsEnumerable()
                    where enroll.Field<string>("StId") == a[0]
