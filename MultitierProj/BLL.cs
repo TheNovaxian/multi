@@ -73,11 +73,13 @@ namespace BusinessLayer
                 }
                 else
                 {
+
                     return Data.Courses.UpdateCourses();
                 }
             }
             else
             {
+
                 return Data.Courses.UpdateCourses();
             }
         }

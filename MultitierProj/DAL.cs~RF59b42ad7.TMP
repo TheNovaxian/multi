@@ -59,7 +59,7 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-            builder.ConflictOption = ConflictOption.OverwriteChanges;
+            //builder.ConflictOption = ConflictOption.OverwriteChanges;
             r.UpdateCommand = builder.GetUpdateCommand();
 
             return r;
@@ -74,7 +74,7 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-            builder.ConflictOption = ConflictOption.OverwriteChanges;
+            //builder.ConflictOption = ConflictOption.OverwriteChanges;
             r.UpdateCommand = builder.GetUpdateCommand();
 
             return r;
@@ -89,7 +89,7 @@ namespace Data
                 );
 
             SqlCommandBuilder builder = new SqlCommandBuilder(r);
-            builder.ConflictOption = ConflictOption.OverwriteChanges;
+            //builder.ConflictOption = ConflictOption.OverwriteChanges;
             r.UpdateCommand = builder.GetUpdateCommand();
 
             return r;
@@ -301,21 +301,14 @@ namespace Data
 
         internal static int UpdateCourses()
         {
-            try
-            {
+
             if (!ds.Tables["Courses"].HasErrors)
             {
                 return adapter.Update(ds.Tables["Courses"]);
             }
             else
             {
-               
-                return -1;
-            }
-            }
-            catch
-            {
-                College1en.Form1.BLLMessage("Error: The course already exists.");
+                
                 return -1;
             }
         }

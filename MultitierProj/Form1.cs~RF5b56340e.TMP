@@ -208,10 +208,30 @@ namespace College1en
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("Cannot Update/ Delete while students are enrolled");
-            e.Cancel = false;
+            if (e.Exception is System.Data.SqlClient.SqlException sqlEx)
+            {
+                // Example: Check for a specific SQL error code related to foreign key constraint violation
+                if (sqlEx.Number == 547) // SQL Server error code for constraint violation
+                {
+                    MessageBox.Show("Cannot update Course ID while there are students enrolled.",
+                                    "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // Handle other SQL exceptions, if necessary
+                    MessageBox.Show("An unexpected database error occurred: " + sqlEx.Message,
+                                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Handle other types of data errors, if needed
+                MessageBox.Show("An error occurred: " + e.Exception.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            OKToChange = false;
+            // Cancel the error to prevent it from propagating further
+            e.ThrowException = false;
         }
 
         //internal static void msgCommandTooLow()

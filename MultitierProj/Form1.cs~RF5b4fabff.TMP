@@ -208,7 +208,7 @@ namespace College1en
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("Cannot Update/ Delete while students are enrolled");
+            MessageBox.Show("Impossible to insert / update / delete");
             e.Cancel = false;
 
             OKToChange = false;
