@@ -60,17 +60,18 @@ namespace MultitierProj
             if (((mode == Modes.MODIFY) || (mode == Modes.FINAL)) && (c != null))
             {
 
+                var selectedRow = c[0];
                 comboBox1.DisplayMember = "StId";
                 comboBox1.ValueMember = "StId";
                 comboBox1.DataSource = Data.Students.GetStudents();
                 comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBox1.SelectedIndex = 0;
+                comboBox1.SelectedValue = selectedRow.Cells["StId"].Value.ToString(); ;
 
                 comboBox2.DisplayMember = "CId";
                 comboBox2.ValueMember = "CId";
                 comboBox2.DataSource = Data.Courses.GetCourses();
                 comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBox2.SelectedIndex = 0;
+                comboBox2.SelectedValue = selectedRow.Cells["CId"].Value.ToString(); ;
 
                 comboBox1.Enabled = false;
                 textBox1.ReadOnly = true;

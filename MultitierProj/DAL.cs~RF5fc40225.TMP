@@ -317,7 +317,7 @@ namespace Data
                 {
                     College1en.Form1.BLLMessage("Error: This course is already associated with a different program.");
                     return -1;
-                }
+                } 
 
                 if (!ds.Tables["Courses"].HasErrors)
             {
@@ -442,7 +442,7 @@ namespace Data
                            from pid in ds.Tables["Programs"].AsEnumerable()
                            where std.Field<string>("StId") == a[0]
                            where cid.Field<string>("CId") == a[1]
-                           //where pid.Field<string>("ProgId") == cid.Field<string>("ProgId")
+                           where pid.Field<string>("ProgId") == cid.Field<string>("ProgId")
                            select new
                            {
                                StId = std.Field<string>("StId"),

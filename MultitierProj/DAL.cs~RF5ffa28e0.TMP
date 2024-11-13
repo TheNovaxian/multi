@@ -527,12 +527,7 @@ namespace Data
                     College1en.Form1.DALMessage("Modication successful");
                 }
                 return 0;
-            }
-            catch (Exception)
-            {
-                College1en.Form1.DALMessage("Insertion / Update rejected");
-                return -1;
-            }
+           
         }
 
 

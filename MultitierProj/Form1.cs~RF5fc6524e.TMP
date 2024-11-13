@@ -259,7 +259,7 @@ namespace College1en
                 }
                 else
                 {
-                    MessageBox.Show("To update this line, Final Grade value must be removed first.");
+                    MessageBox.Show("To update this line, Eval value must be removed first.");
                 }
             }
         }
@@ -271,7 +271,7 @@ namespace College1en
             {
                 MessageBox.Show("At least one line must be selected for deletion");
             }
-            else 
+            else // (c.Count > 1)
             {
                 List<string[]> lId = new List<string[]>();
                 for (int i = 0; i < c.Count; i++)
