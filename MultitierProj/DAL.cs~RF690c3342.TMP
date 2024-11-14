@@ -421,8 +421,8 @@ namespace Data
                 College1en.Form1.BLLMessage("Error: The student cannot enroll in this course as it is not part of their program.");
                 return -1;
             }
-            try
-            {
+            //try
+            //{
                 DataRow line = ds.Tables["Enrollments"].NewRow();
                 line.SetField("StId", a[0]);
                 line.SetField("CId", a[1]);
@@ -450,18 +450,18 @@ namespace Data
                                Fgrade = line.Field<Nullable<int>>("FinalGrade")
                            });
                 
-                    var r = query.First();
+                    var r = query.Single();
                     displayEnrollments.Rows.Add(new object[] { r.StId, r.StName, r.CId, r.CName, r.Fgrade, r.ProgId, r.ProgName });
                     College1en.Form1.DALMessage("Insertion successful");
                 }
                 return 0;
+            //}
+            //catch (Exception)
+            //{
+            //    College1en.Form1.DALMessage("Insertion / Update rejected");
+            //    return -1;
+            //}
         }
-            catch (Exception)
-            {
-                College1en.Form1.DALMessage("Insertion / Update rejected");
-                return -1;
-            }
-}
 
         internal static int ModData(string[] a)
         {

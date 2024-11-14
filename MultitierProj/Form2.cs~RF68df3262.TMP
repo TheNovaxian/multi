@@ -52,7 +52,6 @@ namespace MultitierProj
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.SelectedIndex = 0;
 
-            comboBox1.Enabled = true;
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
             textBox3.ReadOnly = true;
@@ -60,36 +59,24 @@ namespace MultitierProj
 
             if (((mode == Modes.MODIFY) || (mode == Modes.FINAL)) && (c != null))
             {
-                comboBox1.SelectedValue = c[0].Cells["StId"].Value;
-                comboBox2.SelectedValue = c[0].Cells["CId"].Value;
-                textBox3.Text = "" + c[0].Cells["FinalGrade"].Value;
-                assignInitial = new string[] { "" + c[0].Cells["StId"].Value, (string)c[0].Cells["CId"].Value };
-                //var selectedRow = c[0];
-                //comboBox1.DisplayMember = "StId";
-                //comboBox1.ValueMember = "StId";
-                //comboBox1.DataSource = Data.Students.GetStudents();
-                //comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-                //comboBox1.SelectedValue = selectedRow.Cells["StId"].Value.ToString(); ;
 
-                //comboBox2.DisplayMember = "CId";
-                //comboBox2.ValueMember = "CId";
-                //comboBox2.DataSource = Data.Courses.GetCourses();
-                //comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-                //comboBox2.SelectedValue = selectedRow.Cells["CId"].Value.ToString(); ;
+                var selectedRow = c[0];
+                comboBox1.DisplayMember = "StId";
+                comboBox1.ValueMember = "StId";
+                comboBox1.DataSource = Data.Students.GetStudents();
+                comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox1.SelectedValue = selectedRow.Cells["StId"].Value.ToString(); ;
 
-                //comboBox1.Enabled = false;
-                //textBox1.ReadOnly = true;
-                //textBox2.ReadOnly = false;
-                //textBox3.ReadOnly = true;
-            }
-            if (mode == Modes.MODIFY)
-            {
-                //textBox3.Enabled = false;
-                textBox3.ReadOnly = true;
-                textBox2.ReadOnly = true;
-                textBox1.ReadOnly = true;
+                comboBox2.DisplayMember = "CId";
+                comboBox2.ValueMember = "CId";
+                comboBox2.DataSource = Data.Courses.GetCourses();
+                comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboBox2.SelectedValue = selectedRow.Cells["CId"].Value.ToString(); ;
+
                 comboBox1.Enabled = false;
-                comboBox2.Enabled = true;
+                textBox1.ReadOnly = true;
+                textBox2.ReadOnly = false;
+                textBox3.ReadOnly = true;
             }
             if (mode == Modes.FINAL)
             {
@@ -145,7 +132,7 @@ namespace MultitierProj
                 List<string[]> lId = new List<string[]>();
                 lId.Add(assignInitial);
 
-                r = Data.Enrollments.AddData(new string[] { (string)comboBox1.SelectedValue, (string)comboBox2.SelectedValue });
+                r = Data.Enrollments.ModData(new string[] { (string)comboBox1.SelectedValue, (string)comboBox2.SelectedValue });
 
                 if (r == 0)
                 {

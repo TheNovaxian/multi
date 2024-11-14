@@ -62,8 +62,7 @@
               "RelativeToolTip": "EmpProj\\Form1.cs",
               "ViewState": "AgIAAN0AAAAAAAAAAAAQwMoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T02:05:41.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T02:05:41.346Z"
             },
             {
               "$type": "Document",
@@ -74,8 +73,7 @@
               "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\EmpProj3_v3\\EmpProj3 v3\\EmpProj\\Form1.cs [Design]",
               "RelativeToolTip": "EmpProj\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T02:05:36.518Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-07T02:05:36.518Z"
             },
             {
               "$type": "Document",
@@ -87,7 +85,8 @@
               "RelativeToolTip": "EmpProj\\BLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T19:15:51.794Z"
+              "WhenOpened": "2024-11-05T19:15:51.794Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,7 +96,7 @@
               "RelativeDocumentMoniker": "EmpProj\\DAL.cs",
               "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\EmpProj3_v3\\EmpProj3 v3\\EmpProj\\DAL.cs",
               "RelativeToolTip": "EmpProj\\DAL.cs",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAqwF8BAABGAAAAAAAAAA==",
+              "ViewState": "AgIAADoBAAAAAAAAAAAAAD0BAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T20:08:08.339Z",
               "EditorCaption": ""
@@ -110,7 +109,7 @@
               "RelativeDocumentMoniker": "EmpProj\\Form2.cs",
               "ToolTip": "C:\\Users\\Shaquille\\Desktop\\MultiTierProject\\EmpProj3_v3\\EmpProj3 v3\\EmpProj\\Form2.cs",
               "RelativeToolTip": "EmpProj\\Form2.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAUwHAAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAHkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T20:07:50.263Z",
               "EditorCaption": ""

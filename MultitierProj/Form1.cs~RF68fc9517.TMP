@@ -253,14 +253,13 @@ namespace College1en
             }
             else
             {
-                if ("" + c[0].Cells["FinalGrade"].Value != "")
+                if ("" + c[0].Cells["FinalGrade"].Value == "")
                 {
-                    
-                    MessageBox.Show("To update this line, Final Grade value must be removed first.");
+                    Form2.current.Start(Form2.Modes.MODIFY, c);
                 }
                 else
                 {
-                    Form2.current.Start(Form2.Modes.MODIFY, c);
+                    MessageBox.Show("To update this line, Final Grade value must be removed first.");
                 }
             }
         }
